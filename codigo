@@ -3,6 +3,7 @@
 #Código para descargar programas de análisis filogenéticos
 
 #Script para descargar TNT en carpeta bin presente en el disco C
+
 pdw  #Conocer dónde estamos en la consola
 cd /mnt/c #dirigirse al disco C
 mkdir bin #crear una carpeta llamada bin
@@ -10,8 +11,10 @@ sudo wget http://www.lillo.org.ar/phylogeny/tnt/ZIPCHTNT.ZIP #Autorizar la desca
 mv ZIPCHTNT.ZIP /mnt/c/bin #mover a la carpeta bin en el disco C
 unzip ZIPCHTNT.ZIP #descomprimir .zip
 ls #mostrar los archivos de la carpeta bin
+./tnt.exe #ejecutar TNT 
 
 #Script para descargar paup
+
 cd /mnt/c/bin/ #dirigirse a la carpeta bin
 mkdir paup #crear una carpeta llamada paup
 cd /mnt/c/bin/paup #ingresar a la carpeta paup
@@ -27,14 +30,7 @@ cd mesquite #dirigirse a la carpeta mesquite
 wget https://github.com/MesquiteProject/MesquiteCore/releases/download/untagged-8cc6db36651fb5d9acec/Mesquite351-Linux.tgz #descargar mesqite para Linux
 tar -xvzf Mesquite351-Linux.tgz #descomprimir archivo .tgz
 ls # mostrar archivos descomprimidos
+apt-get install default-jdk #instalar java
+sudo apt-get update #actualizar paquetes
+java -jar Mesquite.jar  #ejecutar Mesquite
 
-#Script para descargar Mr Bayes
-cd /mnt/c/bin/ #dirigirse a la carpeta bin
-mkdir mrbayes #crear una carpeta llamada mrbayes
-sudo apt-get install mpi
-wget https://developer.nvidia.com/compute/cuda/9.2/Prod2/local_installers/cuda-repo-ubuntu1604-9-2-local_9.2.148-1_amd64 #Instalar CUDA
-git clone --depth=1 https://github.com/beagle-dev/beagle-lib.git # descargar BEAGLE
-
-wget https://github.com/NBISweden/MrBayes/raw/v3.2.6/mrbayes-3.2.6.tar.gz
-gunzip mrbayes-3.2.6.tar.gz
-tar -xvf mrbayes-3.2.6.tar
